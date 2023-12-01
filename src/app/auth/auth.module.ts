@@ -4,8 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { GoogleLoginCardComponent } from './google-login-card/google-login-card.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-
-
+import {RouterLink} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -16,7 +15,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ],
   exports: [
     RegisterComponent,
@@ -24,4 +24,5 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     LoginComponent
   ]
 })
+
 export class AuthModule { }
