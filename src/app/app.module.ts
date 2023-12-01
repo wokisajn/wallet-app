@@ -7,6 +7,7 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {firebaseConfig} from "../environments/environment";
 import {AuthModule} from "./auth/auth.module";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,8 @@ import {AuthModule} from "./auth/auth.module";
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AuthModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

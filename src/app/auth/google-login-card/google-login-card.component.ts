@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
+import {AuthService} from "../../services/auth/auth.service";
 
 @Component({
   selector: 'app-google-login-card',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class GoogleLoginCardComponent {
 
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {
+  }
+
+  loginWithGoogle() {
+    this.authService.signInWithGoogle().then((res: any) => {
+      this.router.navigateByUrl('home');
+    }).catch((error: any) => {
+      console.error(error);
+    });
+  }
 }
