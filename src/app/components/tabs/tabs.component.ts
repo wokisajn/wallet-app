@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-tabs',
+  templateUrl: './tabs.component.html',
+  styleUrls: ['./tabs.component.scss']
 })
-
-export class AppComponent {
-  title = 'wallet16-app';
+export class TabsComponent {
 
   navLinks = [
     { path: '/home', label: 'Home' },
