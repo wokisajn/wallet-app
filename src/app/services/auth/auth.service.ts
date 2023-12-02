@@ -69,4 +69,13 @@ export class AuthService {
     //   });
     // });
   }
+
+  async forgotPassword(passwordResetEmail: string) {
+    try {
+      await this.afa.sendPasswordResetEmail(passwordResetEmail);
+      window.alert('Password reset email sent');
+    } catch {
+      window.alert(console.error());
+    }
+  }
 }
