@@ -37,8 +37,8 @@ export class AuthService {
       });
     });
   }
-
-  singInWithEmailAndPassword(user: {email: string, password: string}) {
+  
+  signInWithEmailAndPassword(user: {email: string, password: string}) {
     return new Promise((resolve, reject) => {
       this.afa.signInWithEmailAndPassword(user.email, user.password)
         .then((userData) => {

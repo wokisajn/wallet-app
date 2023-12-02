@@ -5,6 +5,8 @@ import { RegisterComponent } from './register/register.component';
 import { GoogleLoginCardComponent } from './google-login-card/google-login-card.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterLink} from "@angular/router";
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {RouterLink} from "@angular/router";
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterLink
+    RouterLink,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [
     RegisterComponent,

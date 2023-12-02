@@ -1,1 +1,43 @@
-<p>register works!</p>
+<div class="register-container">
+    <div [formGroup]="registerForm" class="register-content">
+        <p class="title">Signup</p>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input formControlName="username" matInput type="text">
+            <mat-error *ngIf="registerForm.controls['username'].hasError('required')">Username is required</mat-error>
+            <mat-error *ngIf="registerForm.controls['username'].hasError('email')">Invalid email</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Phone Number</mat-label>
+            <input formControlName="phoneNumber" matInput type="text">
+            <mat-error *ngIf="registerForm.controls['phoneNumber'].hasError('required')">Phone number is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+            <mat-icon (click)="hide = !hide" matSuffix>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            <mat-error *ngIf="registerForm.controls['password'].hasError('required')">Password is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input formControlName="confirmPassword" matInput [type]="hideConfirmPassword ? 'password' : 'text'">
+            <mat-icon (click)="hideConfirmPassword = !hideConfirmPassword" matSuffix>{{ hideConfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            <mat-error *ngIf="registerForm.controls['confirmPassword'].hasError('required')">Confirm Password is required</mat-error>
+        </mat-form-field>
+
+        <p class="alternative">Already have an account? <span [routerLink]="['/login']">Login</span></p>
+        <button class="btn btnFill" (click)="registerWithEmailAndPassword()" [disabled]="registerForm.invalid && registerForm.get('password')?.value === registerForm.get('confirmPassword')?.value">Register</button>
+
+        <div class="or-line-divider">
+            <p>Or</p>
+        </div>
+
+        <div class="google-card">
+            <app-google-login-card></app-google-login-card>
+        </div>
+    </div>
+</div>
