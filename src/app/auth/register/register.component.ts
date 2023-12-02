@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit{
     const userData = Object.assign(this.registerForm.value, {email: this.registerForm.value.username});
 
     this.authService.registerWithEmailAndPassword(userData).then((res: any) => {
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/login');
     }).catch((error: any) => {
       console.error(error);
     });

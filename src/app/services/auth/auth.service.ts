@@ -70,12 +70,14 @@ export class AuthService {
     // });
   }
 
-  async forgotPassword(passwordResetEmail: string) {
-    try {
-      await this.afa.sendPasswordResetEmail(passwordResetEmail);
-      window.alert('Password reset email sent');
-    } catch {
-      window.alert(console.error());
-    }
+  resetPassword(passwordResetEmail: string) {
+    return new Promise((resolve, reject) => {
+      this.afa.sendPasswordResetEmail(passwordResetEmail)
+        .then(() => {
+          resolve(true);
+        }).catch((error) => {
+        reject(error);
+      });
+    });
   }
 }

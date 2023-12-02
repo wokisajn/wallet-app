@@ -27,7 +27,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
   exports: [
     RegisterComponent,
     GoogleLoginCardComponent,
-    LoginComponent
+    LoginComponent,
+    ResetPasswordComponent
   ]
 })
 
