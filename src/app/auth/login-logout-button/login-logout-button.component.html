@@ -1,8 +1,8 @@
-<div>
+<div class="buttons" style="float: right;">
   <ng-container *ngIf="(isLoggedIn() | async); else showLoginBlock">
-    <button class="button is-danger login-logout-button" (click)="logout()">Logout</button>
+    <p class="" (click)="logout()">Logout</p>
   </ng-container>
   <ng-template #showLoginBlock>
-    <button class="button is-primary login-logout-button" (click)="login()">Login</button>
+    <p class="" (click)="login()">Login</p>
   </ng-template>
 </div>

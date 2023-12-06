@@ -1,4 +1,4 @@
-<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+<!-- <nav mat-tab-nav-bar [tabPanel]="tabPanel">
     <a mat-tab-link
       *ngFor="let link of navLinks"
       [routerLink]="link.path"
@@ -6,7 +6,16 @@
       [active]="rla.isActive">
       {{link.label}}
     </a>
+</nav> -->
+<nav class="tabs is-centered">
+  <ul>
+    <li *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive="is-active">
+      <a>{{ link.label }}</a>
+    </li>
+  </ul>
 </nav>
 <mat-tab-nav-panel #tabPanel>
   <router-outlet></router-outlet>
 </mat-tab-nav-panel>
+
+
