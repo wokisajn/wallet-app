@@ -8,13 +8,16 @@ import { RouterLink } from "@angular/router";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { LoginLogoutButtonComponent } from './login-logout-button/login-logout-button.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
     GoogleLoginCardComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    LoginLogoutButtonComponent
   ],
   imports: [
     CommonModule,
@@ -22,13 +25,15 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     ReactiveFormsModule,
     RouterLink,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSnackBarModule
   ],
   exports: [
     RegisterComponent,
     GoogleLoginCardComponent,
     LoginComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    LoginLogoutButtonComponent
   ]
 })
 
