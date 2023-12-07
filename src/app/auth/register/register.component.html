@@ -30,8 +30,9 @@
         </mat-form-field>
 
         <p class="alternative">Already have an account? <span [routerLink]="['/login']">Login</span></p>
-        <button class="btn btnFill" (click)="registerWithEmailAndPassword()" [disabled]="registerForm.invalid && registerForm.get('password')?.value === registerForm.get('confirmPassword')?.value">Register</button>
-
+        
+        <button class="btn btnFill is-primary is-fullwidth mt-3" (click)="registerWithEmailAndPassword()" [disabled]="registerForm.invalid && registerForm.get('password')?.value === registerForm.get('confirmPassword')?.value">Register</button>
+        
         <div class="or-line-divider">
             <p>Or</p>
         </div>

@@ -11,9 +11,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AuthService {
 
-  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+  public isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
 
-  
   user: Observable<User | null> | null;
 
   constructor(
@@ -56,6 +55,7 @@ export class AuthService {
           this.router.navigate(['/']);
         }).catch((error) => {
           reject(error);
+          
       });
     });
   }

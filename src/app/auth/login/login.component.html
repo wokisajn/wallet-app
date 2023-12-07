@@ -2,13 +2,17 @@
   <h2 class="title is-2 has-text-centered">Login</h2>
 
   <form [formGroup]="loginForm" (ngSubmit)="loginWithEmail()" >
+  
     <div class="field">
       <label class="label">Username</label>
       <div class="control">
         <input class="input" type="text" formControlName="username" placeholder="username" required>
-             <p class="help is-danger" *ngIf="loginForm.controls['username']?.touched && loginForm.controls['username']?.errors">
-             Username is required.
-        </p>
+            <p class="help is-danger" *ngIf="loginForm.controls['username']?.touched && loginForm.controls['username']?.hasError('email')">
+              Email is incorrect.
+            </p>
+            <p class="help is-danger" *ngIf="loginForm.controls['username']?.touched && loginForm.controls['username']?.hasError('required')">
+              Email is required.
+            </p>
       </div>
     </div>
 
@@ -31,9 +35,14 @@
       </p>
     </div>
 
-    <div *ngIf="loginForm && loginForm.invalid" class="notification is-danger">
+    <div *ngIf="loginForm.errors?.['unauthenticated']" class="notification is-danger">
+      Email or Password incorrect!
+    </div>
+
+    <div *ngIf="loginForm && loginForm.invalid && (loginForm.dirty) && !loginForm.errors?.['unauthenticated']" class="notification is-danger">
       Please fill out all required fields.
     </div>
+    
 
     <button type="submit" [disabled]="loginForm.invalid" class="button is-primary is-fullwidth mt-3">Login</button>
   </form>

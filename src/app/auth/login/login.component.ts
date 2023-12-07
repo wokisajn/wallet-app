@@ -19,11 +19,9 @@ export class LoginComponent implements OnInit {
     }
   )
 
-
-  // password: FormControl = new FormControl('', Validators.required);
-
-  constructor(private authService: AuthService) {
-  }
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
    
@@ -41,6 +39,7 @@ export class LoginComponent implements OnInit {
       console.log(r);
     }).catch(e => {
       console.log(e);
+      this.loginForm.setErrors({ unauthenticated: true });
     });
   }
 }
