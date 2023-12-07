@@ -1,23 +1,25 @@
 <div class="app-container">
   <header class="hero is-primary is-bold has-text-centered">
     <div class="container">
-      <h1 class="is-centered is-vcentered" style="margin-bottom: ;">Wallet</h1>
+      <h1 class="is-centered is-vcentered">Wallet</h1>
     </div>
   </header>
 
-  <main class="has-text-centered">
+  <main class="has-text-centered app-main-container">
 
     <div>
       <app-login-logout-button></app-login-logout-button>
     </div>  
 
-    <app-tabs></app-tabs> 
-    
+    <div>
+      <app-tabs></app-tabs> 
+    </div>
+
     <router-outlet></router-outlet>
  
   </main>
 
-  <footer class="footer has-background-primary has-text-white has-text-centered">
+  <footer class="has-background-primary has-text-white has-text-centered">
     <div class="content">
       <p class="">&copy; 2023 Footer</p>
     </div>
