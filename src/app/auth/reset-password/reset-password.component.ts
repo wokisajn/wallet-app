@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class ResetPasswordComponent implements OnInit{
 
-  registerForm: FormGroup = new FormGroup({
+  resetPasswordForm: FormGroup = new FormGroup({
     username: new FormControl('', [Validators.required, Validators. email]), 
   });
 
@@ -26,8 +26,7 @@ export class ResetPasswordComponent implements OnInit{
   }
 
   resetPassword() {
-    // Get the username from the form
-    const username = this.registerForm.get('username')?.value;
+    const username = this.resetPasswordForm.get('username')?.value;
     this.authService.resetPassword(username).then(() => {
       this.router.navigate(['/auth/login']);
     }).catch((error) => {

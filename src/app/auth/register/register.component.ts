@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class RegisterComponent implements OnInit{
 
   hide: boolean = true;
-  hideConfirmPassword: boolean = true;
+  hideConfirm: boolean = true;
   registerForm: FormGroup = new FormGroup({
     username: new FormControl('', [Validators.required, Validators. email]), 
     phoneNumber: new FormControl("", [Validators.required]), 
@@ -38,5 +38,18 @@ export class RegisterComponent implements OnInit{
     }).catch((error: any) => {
       console.error(error);
     });
+  }
+
+  togglePasswordVisibility(type: string): void {
+    switch (type) { 
+      case 'password': {
+        this.hide = !this.hide;
+        break;
+      }
+      case 'confirmPassword': {
+        this.hideConfirm = !this.hideConfirm;
+        break;
+      }
+    }
   }
 }

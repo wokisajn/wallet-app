@@ -83,7 +83,7 @@ export class AuthService {
         .then(() => {
           resolve(true);
         }).catch((error) => {
-        reject(error);
+          reject(error);
       });
     });
   }
@@ -92,7 +92,6 @@ export class AuthService {
     return this.isAuthenticatedSubject.asObservable();
   }
   
-  // Call this when authentication state changes
   setAuthenticationState(isAuthenticated: boolean): void {
     this.isAuthenticatedSubject.next(isAuthenticated);
   }

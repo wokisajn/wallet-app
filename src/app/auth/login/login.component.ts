@@ -42,4 +42,8 @@ export class LoginComponent implements OnInit {
       this.loginForm.setErrors({ unauthenticated: true });
     });
   }
+
+  togglePasswordVisibility(): void {
+    this.hide = !this.hide;
+  }
 }
